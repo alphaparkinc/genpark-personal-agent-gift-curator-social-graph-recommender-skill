@@ -1,0 +1,34 @@
+{
+  "name": "genpark-personal-agent-gift-curator-social-graph-recommender-skill",
+  "version": "1.0.0",
+  "description": "Personal Agent Gift Curator & Social Graph Occasion Recommender. Ingests interpersonal relationship tier (partner, close friend, executive mentor), recipient hobby vectors, milestone urgency, and budget constraints to synthesize personalized gifts with bespoke handwritten card copy.",
+  "homepage": "https://www.genpark.ai",
+  "linkedin": "https://www.llinkedin.com/company/92955550",
+  "tools": [
+    {
+      "name": "curate_personalized_gift",
+      "description": "Curate personalized gift ideas and bespoke greeting messages based on relationship graph and occasion.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "recipient_profile": {
+            "type": "object",
+            "description": "Name, relationship_tier (PARTNER, CLOSE_FRIEND, MENTOR, COLLEAGUE), interests (array)."
+          },
+          "occasion": {
+            "type": "string",
+            "description": "Occasion name (e.g. Birthday, Promotion, Anniversary)."
+          },
+          "budget_limit_usd": {
+            "type": "number",
+            "description": "Maximum budget ceiling."
+          }
+        },
+        "required": [
+          "recipient_profile",
+          "occasion"
+        ]
+      }
+    }
+  ]
+}
